@@ -1,0 +1,46 @@
+<!-- reactiveforms ????? à modifier  -->
+<form (ngSubmit)="onSubmit()" #fileUploadForm="ngForm">
+  <img class ="photoDJ" src="../assets/DJ.jpg" alt="">
+  <h1> LET'S PLAY THE SOUND </h1>
+  <div class="form-group">
+    <label for="fileType">Type de fichier:</label>
+    <select class="form-control" id="fileType" [(ngModel)]="selectedFileType" name="fileType">
+      <option value="url">URL</option>
+      <option value="local">Fichier local</option>
+    </select>
+  </div>
+
+  <div class="form-group" *ngIf="selectedFileType === 'url'">
+    <label for="fileUrl">URL du fichier:</label>
+    <input  type="text"   class="form-control" id="fileUrl" [(ngModel)]="fileUrl" name="fileUrl">
+    <p >{{fileUrl}}</p>
+
+  </div>
+
+  <div class="form-group" *ngIf="selectedFileType === 'local'">
+    <label for="file">Fichier:</label>  
+    <input type="file" class="form-control" accept="audio/mp3" id="file" (change)=" onFileSelected($event)" name="file">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Ajouter</button>
+  <!-- <audio src="http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3"></audio> -->
+    <button  type="card wrapper" (click)="playSound()">Play a Sound</button>
+    <!-- <button type="card wrapper" (click)="pauseSound()"> Pause</button> -->
+<br>
+<br>
+
+    <div>
+      <audio #mp3Player [src]="playListUrl[currentIndex]" >Test Audio</audio>
+      <button (click)="playFile()">Play</button>
+      <button  (click)="pauseFile()" >Pause</button>
+      <br>
+      <br>
+      <span>{{time}}</span>
+      <label for="{{time}}"></label>
+      <progress id="{{time}}" [max]="mp3Player.duration" [value]="mp3Player.currentTime">{{time}}</progress>
+      <br>
+      <p *ngFor="let url  of playListUrl; let i=index">
+        <li [value]="url"> {{url}}<button  (click)="deleteFile(i)" >delete</button></li>
+      </p>
+    </div>
+</form>

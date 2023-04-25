@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+  background-color: #c4c2c2;
+}
+
+.photoDJ{
+  width: 1550px;
+  
+}
+
+h1{
+text-align: center;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.form-group {
+  margin-top: 30px;
+}
+
+/* Styliser les labels */
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Styliser les inputs */
+input[type='text'],
+input[type='file'] {
+  border: 1px solid #ccc;
+  padding: 5px;
+ 
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styliser le select */
+select {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styliser le bouton */
+button[type='submit'] {
+  background-color: #00ff9976;
+  color: #fff;
+   margin-right: 10px;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Styliser le bouton au survol */
+button[type='submit']:hover {
+  background-color: #043a04;
+}
+
+
+button[type='card wrapper'] {
+  background-color: #00ff9976;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Styliser le bouton au survol */
+button[type='card wrapper']:hover {
+  background-color: #043a04;
+}
